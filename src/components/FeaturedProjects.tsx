@@ -26,7 +26,7 @@ const projects = [
     description:
       "Built and maintained the ACM CSUN chapter website using Bootstrap, HTML, CSS, and JavaScript, boosting engagement by 15% through design improvements, regular updates, and analytics-driven decisions.",
     image: "/img/acm.png",
-    tags: ["React Native", "PostgreSQL", "APIs"],
+    tags: ["Bootstrap", "HTML", "CSS", "JavaScript", "Web Development"],
     link: "https://www.stelesthetics.net/",
   },
   {
@@ -35,7 +35,7 @@ const projects = [
     description:
       "Advised an app founder on technology strategy, attended Google events to stay ahead of trends, and helped improve functionality and analytics through hands-on consulting.",
     image: "/img/lifeaid.jpeg",
-    tags: ["React Native", "PostgreSQL", "APIs"],
+    tags: false,
     showPlaceholder: false,
   },
 ];
