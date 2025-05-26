@@ -1,37 +1,26 @@
-import Card from "./Card"
+
 
 export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative min-h-[100vh] bg-white px-4">
-        <div className="max-w-4xl mx-auto pt-20 text-center px-4">
-          <h1 className="text-2xl md:text-2xl font-bold mb-4 text-black">
-            Securing mission-critical systems at scale.
+      <section className="min-h-screen bg-slate-100 flex items-center justify-center px-4">
+        <div className="max-w-3xl text-center">
+          <h1 className="text-4xl md:text-5xl font-bold text-black mb-4">
+            Your business deserves modern software
           </h1>
-          <p className="text-lg md:text-xl text-gray-700 mb-6">
-            Research & Development Engineer with hands-on experience in
-            DevSecOps, containerized infrastructure, and real-time system
-            integration for public sector environments.
+          <p className="text-base md:text-lg text-gray-600 mb-6">
+            I help businesses build secure, scalable systems using DevSecOps,
+            real time integration, and AI — no complex setup required.
           </p>
-        </div>
-        {/* Cards Grid */}
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 px-4 pb-20">
-          <Card
-            logoUrl="https://example.com/logo1.png"
-            description="Description for Project 1."
-            link="https://example.com/project1"
-          />
-          <Card
-            logoUrl="https://example.com/logo2.png"
-            description="Description for Project 2."
-            link="https://example.com/project2"
-          />
-          <Card
-            logoUrl="https://example.com/logo3.png"
-            description="Description for Project 3."
-            link="https://example.com/project3"
-          />
+          <div className="flex justify-center gap-4">
+            <button className="bg-blue-500 text-white px-5 py-2 rounded-md font-semibold hover:bg-blue-600 transition">
+              Build for me
+            </button>
+            <button className="bg-gray-100 text-black px-5 py-2 rounded-md font-semibold hover:bg-gray-200 transition">
+              Start building
+            </button>
+          </div>
         </div>
       </section>
     </>
