@@ -1,3 +1,5 @@
+import Card from "./Card"
+
 export default function Home() {
   return (
     <>
@@ -12,6 +14,24 @@ export default function Home() {
             DevSecOps, containerized infrastructure, and real-time system
             integration for public sector environments.
           </p>
+        </div>
+        {/* Cards Grid */}
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 px-4 pb-20">
+          <Card
+            logoUrl="https://example.com/logo1.png"
+            description="Description for Project 1."
+            link="https://example.com/project1"
+          />
+          <Card
+            logoUrl="https://example.com/logo2.png"
+            description="Description for Project 2."
+            link="https://example.com/project2"
+          />
+          <Card
+            logoUrl="https://example.com/logo3.png"
+            description="Description for Project 3."
+            link="https://example.com/project3"
+          />
         </div>
       </section>
     </>
