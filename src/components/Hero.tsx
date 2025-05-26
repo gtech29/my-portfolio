@@ -14,9 +14,9 @@ export default function Home() {
         }}
       >
         {/* Overlay */}
-        <div className="absolute inset-0 bg-black/40 z-0" />
+        <div className="absolute inset-0 bg-black/20 z-0" />
         {/*  */}
-        <div className="max-w-3xl text-center bg-white/60 backdrop-blur-md border border-white/30 rounded-xl p-8 shadow-lg">
+        <div className="max-w-3xl text-center bg-white/40 backdrop-blur-md border border-white/30 rounded-xl p-8 shadow-lg">
           <h1 className="text-4xl md:text-5xl font-bold text-black mb-4">
             Helping teams build secure, scalable systems that make sense.
           </h1>
