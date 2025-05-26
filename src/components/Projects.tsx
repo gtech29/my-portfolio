@@ -1,4 +1,4 @@
-import Card from "./Card";
+import ProjectCard from "./ProjectCard";
 
 export const Projects = () => {
   return (
@@ -13,20 +13,22 @@ export const Projects = () => {
         </h2>
         {/* Cards Grid */}
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 px-4 pb-20">
-          <Card
-            logoUrl="https://example.com/logo1.png"
-            description="Description for Project 1."
-            link="https://example.com/project1"
+          <ProjectCard
+            title="Stelesthetics"
+            description="Portfolio and lead generation site for a licensed esthetician."
+            image="/img/stelesthetics.jpg"
           />
-          <Card
-            logoUrl="https://example.com/logo2.png"
-            description="Description for Project 2."
-            link="https://example.com/project2"
+
+          <ProjectCard
+            title="NAVFAC Digital Twin"
+            description="Containerized simulation of a DDC system with real-time monitoring."
+            image="/img/navfac.jpg"
           />
-          <Card
-            logoUrl="https://example.com/logo3.png"
-            description="Description for Project 3."
-            link="https://example.com/project3"
+
+          <ProjectCard
+            title="LifeAid App"
+            description="Veteran support and wellbeing tracking app with backend integration."
+            image="/img/lifeaid.jpeg"
           />
         </div>
         <div className="grid grid-cols-1 md:grid-cols-1 gap-6">
