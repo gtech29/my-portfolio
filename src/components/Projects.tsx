@@ -3,32 +3,37 @@ import ProjectCard from "./ProjectCard";
 const projects = [
   {
     title: "NAVFAC Digital Twin",
+    date: " December 2024 \u2013 Present",
     description:
-      "Containerized simulation of a DDC system with real-time monitoring.",
+      "Developed containerized control system apps, configured networks for advanced automation setups, and simulated system behavior using Python to support accurate testing and deployment.",
     image: "/img/navfac.jpg",
     tags: ["Docker", "Kubernetes", "SSH", "DevSecOps", "Linux/Ubuntu", "CI/CD"],
+
     showPlaceholder: true,
   },
   {
     title: "Stelesthetics",
+    date: "February 2022 \u2013 Present",
     description:
-      "Since Feb 2022, I've designed and launched a fully responsive Webflow website that highlights skincare services, streamlines booking, and improved client appointments by 15% through enhanced UX and navigation.",
+      "Designed and launched a fully responsive Webflow website that highlights skincare services, streamlines booking, and improved client appointments by 15% through enhanced UX and navigation.",
     image: "/img/stelesthetics.jpg",
     tags: ["Webflow", "Google Analytics", "Responsive Design"],
     link: "https://www.stelesthetics.net/",
   },
   {
     title: "ACM @ CSUN",
+    date: "June 2024 \u2013 Present",
     description:
-      "Veteran support and wellbeing tracking app with backend integration.",
+      "Built and maintained the ACM CSUN chapter website using Bootstrap, HTML, CSS, and JavaScript, boosting engagement by 15% through design improvements, regular updates, and analytics-driven decisions.",
     image: "/img/acm.png",
     tags: ["React Native", "PostgreSQL", "APIs"],
     link: "https://www.stelesthetics.net/",
   },
   {
     title: "LifeAid App",
+    date: "September 2024 \u2013 Present",
     description:
-      "Veteran support and wellbeing tracking app with backend integration.",
+      "Advised an app founder on technology strategy, attended Google events to stay ahead of trends, and helped improve functionality and analytics through hands-on consulting.",
     image: "/img/lifeaid.jpeg",
     tags: ["React Native", "PostgreSQL", "APIs"],
     showPlaceholder: false,
@@ -41,9 +46,14 @@ export const Projects = () => {
       id="projects"
       className="min-h-screen flex flex-col items-center justify-center py-20 bg-gradient-to-b from-white to-slate-100"
     >
-      <h2 className="text-3xl font-bold mb-12 bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent text-center">
+      <h2 className="text-3xl font-bold text-center text-slate-800 dark:text-white mb-2">
         Technical Projects
       </h2>
+      <p className="text-center text-slate-600 dark:text-slate-300 max-w-2xl mx-auto mb-10">
+        Here are some of the projects I&#39;ve had the opportunity to work on,
+        each one reflecting a different aspect of my experience in design,
+        development, and problem solving across real world applications.
+      </p>
 
       {/* Cards Grid */}
       <div className="w-full max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 px-4 ">
