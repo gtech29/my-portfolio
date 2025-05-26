@@ -13,32 +13,39 @@ export const Projects = () => {
         </h2>
         {/* Cards Grid */}
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 px-4 pb-20">
-          <ProjectCard
-            title="Stelesthetics"
-            description="Portfolio and lead generation site for a licensed esthetician."
-            image="/img/stelesthetics.jpg"
-          />
+          <div className="h-full ">
+            <ProjectCard
+              title="NAVFAC Digital Twin"
+              description="  Built a digital twin simulation using Python and open-source tools
+              to model real-world control systems, enabling safe testing,
+              predictive analysis, and improved system reliability."
+              image="/img/navfac.jpg"
+              tags={["Webflow", "Google Analytics"]}
+            />
+          </div>
 
-          <ProjectCard
-            title="NAVFAC Digital Twin"
-            description="Containerized simulation of a DDC system with real-time monitoring."
-            image="/img/navfac.jpg"
-          />
+          <div className="h-full">
+            <ProjectCard
+              title="Stelesthetics"
+              description="Portfolio and lead generation site for a licensed esthetician."
+              image="/img/stelesthetics.jpg"
+              tags={["Webflow", "Google Analytics"]}
+            />
+          </div>
 
-          <ProjectCard
-            title="LifeAid App"
-            description="Veteran support and wellbeing tracking app with backend integration."
-            image="/img/lifeaid.jpeg"
-          />
+          <div className="h-full">
+            <ProjectCard
+              title="LifeAid App"
+              description="Veteran support and wellbeing tracking app with backend integration."
+              image="/img/lifeaid.jpeg"
+            />
+          </div>
         </div>
+
         <div className="grid grid-cols-1 md:grid-cols-1 gap-6">
           <div className="p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:border-blue-500/30 hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition">
             <h3 className="text-xl font-bold mb-2">Digital Twin Project</h3>
-            <p className="text-gray-400 mb-4">
-              Built a digital twin simulation using Python and open-source tools
-              to model real-world control systems, enabling safe testing,
-              predictive analysis, and improved system reliability.
-            </p>
+            <p className="text-gray-400 mb-4"></p>
             <div className="flex flex-wrap gap-2 mb-4">
               {["Docker", "Kubernetes", "SSH", "Linux/Ubuntu", "CI/CD"].map(
                 (tech, key) => (
@@ -71,18 +78,6 @@ export const Projects = () => {
               booking, and improved client appointments by 15% through enhanced
               UX and navigation.
             </p>
-            <div className="flex flex-wrap gap-2 mb-4">
-              {["Webflow", "Google Analytics"].map((tech, key) => (
-                <span
-                  key={key}
-                  className="bg-blue-500/10 text-blue-500 py-1 px-3 rounded-full text-sm hover:bg-blue-500/20 
-                                    hover:shadow-[0_2px_8px_rgba(59,130,246,0.1)] transition-all
-                    "
-                >
-                  {tech}
-                </span>
-              ))}
-            </div>
 
             <div className="flex justify-between items-center">
               <a
