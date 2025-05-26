@@ -40,7 +40,7 @@ const projects = [
   },
 ];
 
-export const ProjectSection = () => {
+export const FeaturedProjects = () => {
   return (
     <section
       id="projects"
