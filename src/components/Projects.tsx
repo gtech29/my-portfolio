@@ -46,14 +46,16 @@ export const Projects = () => {
       id="projects"
       className="min-h-screen flex flex-col items-center justify-center py-20 bg-gradient-to-b from-white to-slate-100"
     >
-      <h2 className="text-3xl font-bold text-center text-slate-800 dark:text-white mb-2">
-        Technical Projects
-      </h2>
-      <p className="text-center text-slate-600 dark:text-slate-300 max-w-2xl mx-auto mb-10">
-        Here are some of the projects I&#39;ve had the opportunity to work on,
-        each one reflecting a different aspect of my experience in design,
-        development, and problem solving across real world applications.
-      </p>
+      <div className="max-w-4xl mx-auto text-center ">
+        <h2 className="text-3xl font-bold text-center text-black dark:text-white mb-2">
+          Technical Projects
+        </h2>
+        <p className="text-center text-black/80 max-w-2xl mx-auto mb-10">
+          Here are some of the projects I&#39;ve had the opportunity to work on,
+          each one reflecting a different aspect of my experience in design,
+          development, and problem solving across real world applications.
+        </p>
+      </div>
 
       {/* Cards Grid */}
       <div className="w-full max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 px-4 ">
