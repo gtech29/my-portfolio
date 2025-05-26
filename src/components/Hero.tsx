@@ -4,14 +4,22 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="min-h-screen bg-blue-50 flex items-center justify-center px-4">
-        <div className="max-w-3xl text-center">
+      <section
+        className="min-h-screen w-full flex items-center justify-center bg-cover bg-center bg-no-repeat px-4"
+        style={{
+          backgroundImage: "url('/img/hero.png')",
+          backgroundSize: "cover", // Ensures the image scales to cover the area
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
+        <div className="max-w-3xl text-center bg-white/10 backdrop-blur-md border border-white/30 rounded-xl p-8 shadow-lg">
           <h1 className="text-4xl md:text-5xl font-bold text-black mb-4">
-            Your business deserves modern software
+            Helping teams build secure, scalable systems that make sense.
           </h1>
-          <p className="text-base md:text-lg text-gray-600 mb-6">
-            I help businesses build secure, scalable systems using DevSecOps,
-            real time integration, and AI — no complex setup required.
+          <p className="text-base md:text-lg text-gray-800 mb-6">
+            I work with secure automation, real-time integration, and applied AI
+            to build systems that are practical and maintainable.
           </p>
           <div className="flex justify-center gap-4">
             <button className="bg-blue-500 text-white px-5 py-2 rounded-md font-semibold hover:bg-blue-600 transition">
