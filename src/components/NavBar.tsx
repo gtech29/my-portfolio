@@ -7,7 +7,7 @@ export default function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="w-full bg-slate-100 text-gray-900 shadow sticky top-0 z-50">
+    <header className="w-full bg-gradient-to-b from-white to-slate-100  text-gray-900 shadow sticky top-0 z-50">
       <nav className=" relative z-10 max-w-6xl mx-auto flex items-center justify-between py-8 px-4 md:px-8 ">
         {/* Left Links */}
         <ul className="hidden lg:flex space-x-16 text-[16px] font-medium ml-40 lg:mr-8">
