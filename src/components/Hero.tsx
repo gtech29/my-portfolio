@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative min-h-[100vh] px-4">
+      <section className="relative min-h-[100vh] bg-white px-4">
         <div className="max-w-4xl mx-auto pt-20 text-center px-4">
           <h1 className="text-2xl md:text-2xl font-bold mb-4 text-black">
             Securing mission-critical systems at scale.
