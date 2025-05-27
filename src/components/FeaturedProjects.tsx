@@ -35,7 +35,7 @@ const projects = [
     description:
       "Advised an app founder on technology strategy, attended Google events to stay ahead of trends, and helped improve functionality and analytics through hands-on consulting.",
     image: "/img/lifeaid.jpeg",
-    tags: [],
+    tags: ["App Consulting", "Tech Strategy", "Analytics", "User Engagement"],
     showPlaceholder: false,
   },
 ];
