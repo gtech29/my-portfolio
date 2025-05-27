@@ -17,7 +17,7 @@ export default function Projects() {
       {projects.map((project, index) => (
         <section
           key={index}
-          className="flex flex-col md:flex-row gap-6 border rounded-xl shadow-md p-6 bg-white dark:bg-gray-800"
+          className="flex flex-col md:flex-row gap-6 border rounded-xl shadow-md p-6 bg-white"
         >
           {/* Project Image */}
           <div className="w-full md:w-1/3">
@@ -35,22 +35,22 @@ export default function Projects() {
           {/* Project Description */}
           <div className="w-full md:w-2/3 space-y-4">
             <div>
-              <h2 className="text-2xl font-bold text-black dark:text-white">
+              <h2 className="text-2xl font-bold text-black ">
                 {project.title}
               </h2>
               {project.date && (
-                <p className="text-sm text-gray-500 dark:text-gray-400 mb-1">
+                <p className="text-sm text-gray-500  mb-1">
                   {project.date}
                 </p>
               )}
-              <p className="text-gray-700 dark:text-gray-300">
+              <p className="text-gray-700 ">
                 {project.description}
               </p>
             </div>
 
             <table className="w-full table-auto text-left border-collapse text-sm">
               <thead>
-                <tr className="bg-gray-100 dark:bg-gray-700">
+                <tr className="bg-gray-100 ">
                   <th className="border px-4 py-2">Feature</th>
                   <th className="border px-4 py-2">Description</th>
                 </tr>
@@ -78,7 +78,7 @@ export default function Projects() {
                         href={project.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-blue-600 dark:text-blue-400 underline"
+                        className="text-blue-600  underline"
                       >
                         View Project
                       </a>
