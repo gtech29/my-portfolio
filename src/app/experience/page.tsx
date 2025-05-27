@@ -75,7 +75,7 @@ const Experience = [
 
 export default function PExperience() {
   return (
-    <section className="py-20 px-4 max-w-5xl mx-auto">
+    <section className="py-20 px-4 max-w-5xl mx-auto bg-gradient-to-b from-white to-slate-100">
       <h2 className="text-4xl font-bold text-center mb-10">
         Professional Experience
       </h2>

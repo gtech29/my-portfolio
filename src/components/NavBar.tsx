@@ -92,8 +92,8 @@ export default function NavBar() {
             </Link>
           </li>
           <li>
-            <Link href="/experience" onClick={() => setIsOpen(false)}>
-              Experience
+            <Link href="/about" onClick={() => setIsOpen(false)}>
+              About Me
             </Link>
           </li>
           <li>
@@ -102,8 +102,8 @@ export default function NavBar() {
             </Link>
           </li>
           <li>
-            <Link href="/contact" onClick={() => setIsOpen(false)}>
-              Contact
+            <Link href="/experience" onClick={() => setIsOpen(false)}>
+              Experience
             </Link>
           </li>
         </ul>

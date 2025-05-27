@@ -42,7 +42,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="w-full bg-gradient-to-b from-white to-slate-100 dark:from-slate-900 dark:to-slate-800 py-20 px-4 md:px-8 lg:px-16 xl:px-24"
+      className="w-full bg-gradient-to-b from-white to-slate-100 py-20 px-4 md:px-8 lg:px-16 xl:px-24"
     >
       <div className="max-w-2xl mx-auto">
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-black mb-2">
