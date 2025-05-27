@@ -55,7 +55,7 @@ export default function Contact() {
 
         <form
           onSubmit={handleSubmit}
-          className="bg-slate-50 dark:bg-slate-800 rounded-xl shadow-sm p-6 space-y-5 border border-slate-200 dark:border-slate-700"
+          className="bg-slate-50  rounded-xl shadow-sm p-6 space-y-5 border border-slate-200 "
         >
           <input
             type="text"
@@ -64,7 +64,7 @@ export default function Contact() {
             onChange={handleChange}
             placeholder="Your Name"
             required
-            className="w-full px-4 py-3 rounded-md bg-white dark:bg-slate-900 text-slate-800 dark:text-white border border-slate-200 dark:border-slate-700 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-4 py-3 rounded-md bg-white  text-slate-800  border-slate-200  placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
 
           <input
@@ -74,7 +74,7 @@ export default function Contact() {
             onChange={handleChange}
             placeholder="Your Email"
             required
-            className="w-full px-4 py-3 rounded-md bg-white dark:bg-slate-900 text-slate-800 dark:text-white border border-slate-200 dark:border-slate-700 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-4 py-3 rounded-md bg-white  text-slate-800  border-slate-200  placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
 
           <textarea
@@ -84,7 +84,7 @@ export default function Contact() {
             placeholder="Your Message"
             required
             rows={5}
-            className="w-full px-4 py-3 rounded-md bg-white dark:bg-slate-900 text-slate-800 dark:text-white border border-slate-200 dark:border-slate-700 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-4 py-3 rounded-md bg-white  text-slate-800  border-slate-200  placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
 
           <button
@@ -95,7 +95,7 @@ export default function Contact() {
           </button>
 
           {status && (
-            <p className="text-center text-sm text-gray-600 dark:text-gray-400">
+            <p className="text-center text-sm text-gray-600">
               {status}
             </p>
           )}
