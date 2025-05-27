@@ -46,7 +46,7 @@ export default function AboutPage() {
       {/* Profile Image + Intro */}
       <div className="flex flex-col md:flex-row items-center gap-8 mb-12">
         <Image
-          src="/img/profile.jpg" 
+          src="/img/profile.jpg"
           alt="Profile picture of Juan Rodriguez"
           width={200}
           height={200}
@@ -56,7 +56,7 @@ export default function AboutPage() {
           <h1 className="text-4xl font-bold mb-3 text-center text-black">
             Juan Rodriguez
           </h1>
-          <p className="text-lg text-gray-700 dark:text-slate-300 leading-relaxed">
+          <p className="text-lg text-gray-700 leading-relaxed">
             I&#39;m a Research & Development Engineer focused on building
             secure, scalable systems across digital twin, AI/ML, and DevSecOps
             domains. I enjoy blending practical engineering with
@@ -66,7 +66,7 @@ export default function AboutPage() {
       </div>
 
       {/* Timeline Section */}
-      <h2 className="text-2xl font-semibold mb-6">My Journey</h2>
+      <h2 className="text-2xl font-semibold mb-6 text-black">My Journey</h2>
       <div className="relative ml-4 pl-4 border-l-2 border-slate-300 dark:border-slate-700 space-y-10">
         {timeline.map((item, i) => (
           <div key={i}>
