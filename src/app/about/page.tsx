@@ -53,7 +53,7 @@ export default function AboutPage() {
           className="rounded-full border-4 border-slate-300 shadow-md"
         />
         <div>
-          <h1 className="text-4xl font-bold mb-3">Juan Rodriguez</h1>
+          <h1 className="text-4xl font-bold mb-3 text-center">Juan Rodriguez</h1>
           <p className="text-lg text-gray-700 dark:text-slate-300 leading-relaxed">
             I&#39;m a Research & Development Engineer focused on building secure,
             scalable systems across digital twin, AI/ML, and DevSecOps domains.
