@@ -42,22 +42,25 @@ export default function AboutPage() {
   
 
   return (
-    <section className="max-w-5xl mx-auto px-4 py-20">
+    <section className="max-w-5xl mx-auto px-4 py-20 bg-gradient-to-b from-white to-slate-100">
       {/* Profile Image + Intro */}
       <div className="flex flex-col md:flex-row items-center gap-8 mb-12">
         <Image
-          src="/img/profile.jpg" // Make sure your image exists in /public/img
+          src="/img/profile.jpg" 
           alt="Profile picture of Juan Rodriguez"
           width={200}
           height={200}
           className="rounded-full border-4 border-slate-300 shadow-md"
         />
         <div>
-          <h1 className="text-4xl font-bold mb-3 text-center">Juan Rodriguez</h1>
+          <h1 className="text-4xl font-bold mb-3 text-center text-black">
+            Juan Rodriguez
+          </h1>
           <p className="text-lg text-gray-700 dark:text-slate-300 leading-relaxed">
-            I&#39;m a Research & Development Engineer focused on building secure,
-            scalable systems across digital twin, AI/ML, and DevSecOps domains.
-            I enjoy blending practical engineering with forward-thinking design.
+            I&#39;m a Research & Development Engineer focused on building
+            secure, scalable systems across digital twin, AI/ML, and DevSecOps
+            domains. I enjoy blending practical engineering with
+            forward-thinking design.
           </p>
         </div>
       </div>
