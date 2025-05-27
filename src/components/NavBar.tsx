@@ -22,10 +22,10 @@ export default function NavBar() {
 
           <li>
             <Link
-              href="/projects"
+              href="/about"
               className="text-gray-900 hover:text-blue-600 hover:underline underline-offset-4 transition-colors duration-200"
             >
-              Projects
+              About Me
             </Link>
           </li>
         </ul>
@@ -42,18 +42,18 @@ export default function NavBar() {
         <ul className="hidden lg:flex space-x-16 text-[16px] font-medium mr-44 lg:ml-8 ">
           <li>
             <Link
-              href="/experience"
+              href="/projects"
               className="text-gray-900 hover:text-blue-600 hover:underline underline-offset-4 transition-colors duration-200 "
             >
-              Experience
+              Projects
             </Link>
           </li>
           <li>
             <Link
-              href="/contact"
+              href="/experience"
               className="text-gray-900 hover:text-blue-600 hover:underline underline-offset-4 transition-colors duration-200"
             >
-              Contact Me
+              Experience
             </Link>
           </li>
         </ul>
