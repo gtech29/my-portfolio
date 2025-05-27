@@ -45,10 +45,10 @@ export default function Contact() {
       className="w-full bg-gradient-to-b from-white to-slate-100 dark:from-slate-900 dark:to-slate-800 py-20 px-4 md:px-8 lg:px-16 xl:px-24"
     >
       <div className="max-w-2xl mx-auto">
-        <h2 className="text-3xl font-bold text-center text-slate-800 dark:text-white mb-4">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-black mb-2">
           Contact Me
         </h2>
-        <p className="text-center text-slate-600 dark:text-slate-300 mb-10 max-w-xl mx-auto">
+        <p className="text-lg md:text-xl text-center text-black/80 max-w-2xl mx-auto mb-10">
           Feel free to reach out if you&#39;re interested in working together,
           have a question, or just want to say hi.
         </p>

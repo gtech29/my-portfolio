@@ -17,10 +17,10 @@ export default function Home() {
         <div className="absolute inset-0 bg-black/20 z-0 min-h-screen" />
         {/*  */}
         <div className="max-w-3xl text-center bg-white/40 backdrop-blur-md border border-white/30 rounded-xl p-8 shadow-lg">
-          <h1 className="text-4xl md:text-5xl font-bold text-black mb-4">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-black mb-2">
             Helping teams build secure, scalable systems that make sense.
           </h1>
-          <p className="text-base md:text-lg text-gray-800 mb-6">
+          <p className="text-lg md:text-xl text-center text-black/80 max-w-2xl mx-auto mb-10">
             I work with secure automation, real-time integration, and applied AI
             to build systems that are practical and maintainable.
           </p>

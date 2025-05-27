@@ -5,13 +5,13 @@ import projects from "@/assets/projects";
 export default function Projects() {
   return (
     <div className="max-w-6xl mx-auto px-4 py-12 space-y-12">
-      <h1 className="text-3xl font-bold mb-8 text-center text-black dark:text-white">
+      <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-black">
         Projects
       </h1>
-      <p className="text-center text-gray-600 max-w-2xl mx-auto mb-10 text-base md:text-lg">
-        In this section, you&#39;ll find a more detailed overview of the projects
-        I&#39;ve worked on—highlighting the tools, challenges, and real-world impact
-        behind each one.
+      <p className="text-lg md:text-xl text-center text-black/80 max-w-2xl mx-auto mb-10">
+        In this section, you&#39;ll find a more
+        detailed overview of the projects I&#39;ve worked on, highlighting the
+        tools, challenges, and real world impact behind each one.
       </p>
 
       {projects.map((project, index) => (
