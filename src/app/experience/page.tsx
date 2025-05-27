@@ -76,7 +76,7 @@ const Experience = [
 export default function PExperience() {
   return (
     <section className="py-20 px-4 max-w-5xl mx-auto bg-gradient-to-b from-white to-slate-100">
-      <h2 className="text-4xl font-bold text-center mb-10">
+      <h2 className="text-4xl font-bold text-center mb-10 text-black">
         Professional Experience
       </h2>
       <div className="space-y-8">
@@ -103,7 +103,7 @@ export default function PExperience() {
               {proj.tools.map((tool) => (
                 <span
                   key={tool}
-                  className="bg-slate-100  text-slate-700  text-sm px-3 py-1 rounded-full"
+                  className="bg-slate-200  text-slate-700  text-sm px-3 py-1 rounded-full"
                 >
                   {tool}
                 </span>
