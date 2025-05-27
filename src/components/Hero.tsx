@@ -24,14 +24,14 @@ export default function Home() {
             I work with secure automation, real-time integration, and applied AI
             to build systems that are practical and maintainable.
           </p>
-          <div className="flex justify-center gap-4">
+          {/* <div className="flex justify-center gap-4">
             <button className="bg-blue-500 text-white px-5 py-2 rounded-md font-semibold hover:bg-blue-600 transition">
               Build for me
             </button>
             <button className="bg-gray-100 text-black px-5 py-2 rounded-md font-semibold hover:bg-gray-200 transition">
               Start building
             </button>
-          </div>
+          </div> */}
         </div>
       </section>
     </>
