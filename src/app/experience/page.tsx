@@ -83,18 +83,18 @@ export default function PExperience() {
         {Experience.map((proj, index) => (
           <div
             key={index}
-            className="border border-slate-200 dark:border-slate-700 p-6 rounded-xl shadow-sm hover:shadow-md transition"
+            className="border border-slate-200  p-6 rounded-xl shadow-sm hover:shadow-md transition"
           >
             <div className="flex justify-between items-center mb-2">
-              <h3 className="text-xl font-semibold text-black dark:text-white">
+              <h3 className="text-xl font-semibold text-black ">
                 {proj.company}
               </h3>
               <span className="text-sm text-slate-500">{proj.date}</span>
             </div>
-            <p className="text-slate-600 dark:text-slate-300 text-sm mb-1">
+            <p className="text-slate-600  text-sm mb-1">
               {proj.role}
             </p>
-            <ul className="list-disc ml-5 mt-2 space-y-1 text-gray-700 dark:text-slate-300">
+            <ul className="list-disc ml-5 mt-2 space-y-1 text-gray-700 ">
               {proj.highlights.map((point, i) => (
                 <li key={i}>{point}</li>
               ))}
@@ -103,7 +103,7 @@ export default function PExperience() {
               {proj.tools.map((tool) => (
                 <span
                   key={tool}
-                  className="bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 text-sm px-3 py-1 rounded-full"
+                  className="bg-slate-100  text-slate-700  text-sm px-3 py-1 rounded-full"
                 >
                   {tool}
                 </span>
