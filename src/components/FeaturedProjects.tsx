@@ -47,10 +47,10 @@ export const FeaturedProjects = () => {
       className="min-h-screen flex flex-col items-center justify-center py-20 bg-gradient-to-b from-white to-slate-100"
     >
       <div className="max-w-4xl mx-auto text-center ">
-        <h2 className="text-3xl font-bold text-center text-black mb-2">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-black mb-2">
           Featured Projects
         </h2>
-        <p className="text-center text-black/80 max-w-2xl mx-auto mb-10">
+        <p className="text-lg md:text-xl text-center text-black/80 max-w-2xl mx-auto mb-10">
           Here are some of the projects I&#39;ve had the opportunity to work on,
           each one reflecting a different aspect of my experience in design,
           development, and problem solving across real world applications.
@@ -58,7 +58,7 @@ export const FeaturedProjects = () => {
       </div>
 
       {/* Cards Grid */}
-      <div className="w-full max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 px-4 ">
+      <div className="w-full max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-1 gap-6 px-4 ">
         {projects.map((project, index) => (
           <ProjectCard
             className="hover:scale-105 transition-transform duration-300"

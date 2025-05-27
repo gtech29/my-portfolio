@@ -26,7 +26,7 @@ const projects: ProjectCardProps[] = [
       "Developed and maintained the official website for CSUN’s ACM chapter to support events, outreach, and student engagement. Used Bootstrap, HTML/CSS, and JavaScript to implement a clean, mobile-friendly layout. Automated content updates and monitored site traffic via analytics tools, contributing to a 15% increase in site interaction. Regularly updated news sections, meeting announcements, and resources to ensure visibility and usability for the student body.",
     image: "/img/acm.png",
     tags: ["Bootstrap", "HTML", "CSS", "JavaScript", "Web Development"],
-    link: "https://www.stelesthetics.net/", // Update to real link if needed
+    link: "", // Update to real link if needed
   },
   {
     title: "LifeAid App",

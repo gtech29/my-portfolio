@@ -29,8 +29,10 @@ const ProjectCard = ({
     >
       {/* Title with date */}
       <div className="flex items-center justify-between mb-4">
-        <h3 className="text-xl font-bold text-black">{title}</h3>
-        {date && <span className="text-sm text-gray-400">{date}</span>}
+        <h3 className="text-2xl md:text-3xl font-semibold text-black">
+          {title}
+        </h3>
+        {date && <span className="text-base text-gray-500">{date}</span>}
       </div>
 
       {/* Image under title */}
@@ -47,7 +49,9 @@ const ProjectCard = ({
       )}
 
       {/* Description */}
-      <p className="text-gray-500 mb-4">{description}</p>
+      <p className="text-lg md:text-xl text-gray-600 leading-relaxed mb-4">
+        {description}
+      </p>
 
       {/* Tags */}
       {tags.length > 0 && (
