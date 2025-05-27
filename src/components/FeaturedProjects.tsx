@@ -27,7 +27,7 @@ const projects = [
       "Built and maintained the ACM CSUN chapter website using Bootstrap, HTML, CSS, and JavaScript, boosting engagement by 15% through design improvements, regular updates, and analytics-driven decisions.",
     image: "/img/acm.png",
     tags: ["Bootstrap", "HTML", "CSS", "JavaScript", "Web Development"],
-    link: "https://www.stelesthetics.net/",
+    link: "https://csunacm.org/",
   },
   {
     title: "LifeAid App",
