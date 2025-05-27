@@ -34,7 +34,7 @@ export default function Contact() {
       } else {
         setStatus(data.error || "Something went wrong.");
       }
-    } catch (err) {
+    } catch {
       setStatus("Failed to send. Try again.");
     }
   };
