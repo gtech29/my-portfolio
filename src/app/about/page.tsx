@@ -67,7 +67,7 @@ export default function AboutPage() {
 
       {/* Timeline Section */}
       <h2 className="text-2xl font-semibold mb-6 text-black">My Journey</h2>
-      <div className="relative ml-4 pl-4 border-l-2 border-slate-300 dark:border-slate-700 space-y-10">
+      <div className="relative ml-4 pl-4 border-l-2 border-slate-300  space-y-10">
         {timeline.map((item, i) => (
           <div key={i}>
             <div className="text-sm text-slate-500">{item.year}</div>
@@ -79,7 +79,7 @@ export default function AboutPage() {
                   item.current ? "bg-blue-600" : "bg-slate-400"
                 }`}
               />
-              <h3 className="text-lg font-semibold text-black dark:text-white">
+              <h3 className="text-lg font-semibold text-black ">
                 {item.title}
               </h3>
               {item.current && (
@@ -87,7 +87,7 @@ export default function AboutPage() {
               )}
             </div>
 
-            <p className="text-gray-700 dark:text-slate-300">
+            <p className="text-gray-700">
               {item.description}
             </p>
           </div>
