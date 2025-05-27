@@ -39,16 +39,12 @@ export default function Projects() {
                 {project.title}
               </h2>
               {project.date && (
-                <p className="text-sm text-gray-500  mb-1">
-                  {project.date}
-                </p>
+                <p className="text-sm text-gray-500  mb-1">{project.date}</p>
               )}
-              <p className="text-gray-700 ">
-                {project.description}
-              </p>
+              <p className="text-gray-700 ">{project.description}</p>
             </div>
 
-            <table className="w-full table-auto text-left border-collapse text-sm">
+            <table className="w-full table-auto text-left border-collapse text-black">
               <thead>
                 <tr className="bg-gray-100 ">
                   <th className="border px-4 py-2">Feature</th>
