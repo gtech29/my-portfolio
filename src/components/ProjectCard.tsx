@@ -6,7 +6,6 @@ export interface ProjectCardProps {
   image: string;
   tags: string[];
   link?: string;
-  date?: string;
   showPlaceholder?: boolean;
   className?: string;
 }
@@ -17,7 +16,6 @@ const ProjectCard = ({
   image,
   tags,
   link,
-  date,
   showPlaceholder,
   className,
 }: ProjectCardProps) => {
@@ -27,12 +25,11 @@ const ProjectCard = ({
         className || ""
       }`}
     >
-      {/* Title with date */}
-      <div className="flex items-center justify-between mb-4">
-        <h3 className="text-2xl md:text-3xl font-semibold text-black">
+      {/* Project Title */}
+      <div className=" mb-4">
+        <h3 className="text-2xl md:text-3xl font-semibold text-black text-center">
           {title}
         </h3>
-        {date && <span className="text-base text-gray-500">{date}</span>}
       </div>
 
       {/* Image under title */}

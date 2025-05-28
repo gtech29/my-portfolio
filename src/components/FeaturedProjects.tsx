@@ -3,7 +3,7 @@ import ProjectCard from "./ProjectCard";
 const projects = [
   {
     title: "NAVFAC Digital Twin",
-    date: " December 2024 \u2013 Present",
+   
     description:
       "Developed containerized control system apps, configured networks for advanced automation setups, and simulated system behavior using Python to support accurate testing and deployment.",
     image: "/img/navfac.jpg",
@@ -13,7 +13,6 @@ const projects = [
   },
   {
     title: "Stelesthetics",
-    date: "February 2022 \u2013 Present",
     description:
       "Designed and launched a fully responsive Webflow website that highlights skincare services, streamlines booking, and improved client appointments by 15% through enhanced UX and navigation.",
     image: "/img/stelesthetics.jpg",
@@ -22,7 +21,6 @@ const projects = [
   },
   {
     title: "ACM @ CSUN",
-    date: "June 2024 \u2013 Present",
     description:
       "Built and maintained the ACM CSUN chapter website using Bootstrap, HTML, CSS, and JavaScript, boosting engagement by 15% through design improvements, regular updates, and analytics-driven decisions.",
     image: "/img/acm.png",
@@ -31,7 +29,6 @@ const projects = [
   },
   {
     title: "LifeAid App",
-    date: "September 2024 \u2013 Present",
     description:
       "Advised an app founder on technology strategy, attended Google events to stay ahead of trends, and helped improve functionality and analytics through hands-on consulting.",
     image: "/img/lifeaid.jpeg",
