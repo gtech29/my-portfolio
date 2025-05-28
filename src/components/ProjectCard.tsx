@@ -8,6 +8,7 @@ export interface ProjectCardProps {
   link?: string;
   showPlaceholder?: boolean;
   className?: string;
+  date?: string;
 }
 
 const ProjectCard = ({
