@@ -3,13 +3,10 @@ import ProjectCard from "./ProjectCard";
 const projects = [
   {
     title: "NAVFAC Digital Twin",
-   
     description:
       "Developed containerized control system apps, configured networks for advanced automation setups, and simulated system behavior using Python to support accurate testing and deployment.",
     image: "/img/navfac.jpg",
     tags: ["Docker", "Kubernetes", "SSH", "DevSecOps", "Linux/Ubuntu", "CI/CD"],
-
-    showPlaceholder: true,
   },
   {
     title: "Stelesthetics",
@@ -17,7 +14,6 @@ const projects = [
       "Designed and launched a fully responsive Webflow website that highlights skincare services, streamlines booking, and improved client appointments by 15% through enhanced UX and navigation.",
     image: "/img/stelesthetics.jpg",
     tags: ["Webflow", "Google Analytics", "Responsive Design"],
-    link: "https://www.stelesthetics.net/",
   },
   {
     title: "ACM @ CSUN",
@@ -25,7 +21,6 @@ const projects = [
       "Built and maintained the ACM CSUN chapter website using Bootstrap, HTML, CSS, and JavaScript, boosting engagement by 15% through design improvements, regular updates, and analytics-driven decisions.",
     image: "/img/acm.png",
     tags: ["Bootstrap", "HTML", "CSS", "JavaScript", "Web Development"],
-    link: "https://csunacm.org/",
   },
   {
     title: "LifeAid App",
@@ -33,9 +28,9 @@ const projects = [
       "Advised an app founder on technology strategy, attended Google events to stay ahead of trends, and helped improve functionality and analytics through hands-on consulting.",
     image: "/img/lifeaid.jpeg",
     tags: ["App Consulting", "Tech Strategy", "Analytics", "User Engagement"],
-    showPlaceholder: false,
   },
 ];
+
 
 export const FeaturedProjects = () => {
   return (
