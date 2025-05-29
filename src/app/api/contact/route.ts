@@ -27,16 +27,16 @@ export async function POST(request: Request) {
 
   try {
     const body = await request.json();
-    const { name, email, message, website } = body;
+    const { name, email, message,  } = body; //add later when live : website
 
     // Honeypot check
-    if (website?.trim()) {
-      console.warn("Honeypot triggered by suspicious submission:", { ip, website });
-      return NextResponse.json(
-        { error: "Honeypot triggered. Bot blocked." },
-        { status: 400 }
-      );
-    }
+    // if (website?.trim()) {
+    //   console.warn("Honeypot triggered by suspicious submission:", { ip, website }); 
+    //   return NextResponse.json(
+    //     { error: "Honeypot triggered. Bot blocked." },
+    //     { status: 400 }
+    //   );
+    // }
 
     // Required fields
     if (!name || !email || !message) {
@@ -64,7 +64,7 @@ export async function POST(request: Request) {
       email: cleanEmail,
       message: cleanMessage,
       timestamp: serverTimestamp(),
-      ip,
+      // ip,
     });
 
     return NextResponse.json(
