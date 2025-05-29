@@ -1,135 +1,98 @@
-"use client";
-import ReCAPTCHA from "react-google-recaptcha";
-import { useState } from "react";
+import { NextResponse } from "next/server";
+import validator from "validator";
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
+import { db } from "@/lib/firebase";
 
-export default function Contact() {
-  const [recaptchaToken, setRecaptchaToken] = useState("");
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-    website: "", // honeypot
-  });
-  const [status, setStatus] = useState<
-    "idle" | "sending" | "success" | "error"
-  >("idle");
-  const [statusMessage, setStatusMessage] = useState("");
+// In-memory rate limit map: IP => timestamp
+const RATE_LIMIT = new Map<string, number>();
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+// Helper to add timeout to async operations
+function withTimeout<T>(promise: Promise<T>, ms: number): Promise<T> {
+  return Promise.race([
+    promise,
+    new Promise<never>((_, reject) =>
+      setTimeout(() => reject(new Error("Operation timed out")), ms)
+    ),
+  ]);
+}
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setStatus("sending");
-    setStatusMessage("");
+export async function POST(request: Request) {
+  const ip =
+    request.headers.get("x-forwarded-for") ||
+    request.headers.get("cf-connecting-ip") ||
+    "unknown";
+  const now = Date.now();
+  const lastRequest = RATE_LIMIT.get(ip);
 
-    try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...formData, recaptchaToken }),
-      });
+  // Rate limit: 1 request per 60s
+  if (lastRequest && now - lastRequest < 60_000) {
+    return NextResponse.json(
+      { error: "Too many requests. Please try again later." },
+      { status: 429 }
+    );
+  }
 
-      const data = await res.json();
-      if (res.ok) {
-        setStatus("success");
-        setStatusMessage("Message sent!");
-        setFormData({ name: "", email: "", message: "", website: "" });
-        setRecaptchaToken("");
-      } else {
-        setStatus("error");
-        setStatusMessage(data.error || "Something went wrong.");
-      }
-    } catch {
-      setStatus("error");
-      setStatusMessage("Failed to send. Try again.");
+  RATE_LIMIT.set(ip, now);
+
+  try {
+    const { name, email, message, website } = await request.json();
+
+    // Honeypot check
+    if (website && website.trim() !== "") {
+      console.warn("Honeypot triggered:", { ip, website });
+      return NextResponse.json(
+        { error: "Honeypot triggered. Bot blocked." },
+        { status: 400 }
+      );
     }
-  };
 
-  return (
-    <section
-      id="contact"
-      className="w-full bg-gradient-to-b from-white to-slate-100 py-20 px-4 md:px-8 lg:px-16 xl:px-24"
-    >
-      <div className="max-w-2xl mx-auto">
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-black mb-2">
-          Contact Me
-        </h2>
-        <p className="text-lg md:text-xl text-center text-black/80 max-w-2xl mx-auto mb-10">
-          Feel free to reach out if you&#39;re interested in working together,
-          have a question, or just want to say hi.
-        </p>
+    // Validation
+    if (!name || !email || !message) {
+      return NextResponse.json(
+        { error: "All fields are required." },
+        { status: 400 }
+      );
+    }
 
-        <form
-          onSubmit={handleSubmit}
-          className="bg-slate-50 rounded-xl shadow-sm p-6 space-y-5 border border-slate-200"
-        >
-          <input
-            type="text"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            placeholder="Your Name"
-            required
-            className="w-full px-4 py-3 rounded-md bg-white text-slate-800 border-slate-200 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
+    if (!validator.isEmail(email)) {
+      return NextResponse.json(
+        { error: "Invalid email format." },
+        { status: 400 }
+      );
+    }
 
-          <input
-            type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            placeholder="Your Email"
-            required
-            className="w-full px-4 py-3 rounded-md bg-white text-slate-800 border-slate-200 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
+    const cleanName = validator.escape(name.trim());
+    const cleanEmail = validator.normalizeEmail(email) || "";
+    const cleanMessage = validator.escape(message.trim());
 
-          <textarea
-            name="message"
-            value={formData.message}
-            onChange={handleChange}
-            placeholder="Your Message"
-            required
-            rows={5}
-            className="w-full px-4 py-3 rounded-md bg-white text-slate-800 border-slate-200 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
+    // Firestore save with timeout (8 seconds)
+    await withTimeout(
+      addDoc(collection(db, "contacts"), {
+        name: cleanName,
+        email: cleanEmail,
+        message: cleanMessage,
+        timestamp: serverTimestamp(),
+        ip,
+      }),
+      8000
+    );
 
-          <ReCAPTCHA
-            sitekey="6LdyuU4rAAAAALn_RLtNUfKYKf3rfBsBraKppwUG"
-            onChange={(token) => setRecaptchaToken(token || "")}
-          />
+    return NextResponse.json(
+      { success: true, message: "Message received." },
+      { status: 200 }
+    );
+  } catch (error: any) {
+    console.error("Contact form error:", error);
+    if (error.message === "Operation timed out") {
+      return NextResponse.json(
+        { error: "Server took too long to respond. Please try again later." },
+        { status: 504 }
+      );
+    }
 
-          <input
-            type="text"
-            name="website"
-            value={formData.website}
-            onChange={handleChange}
-            className="hidden"
-            autoComplete="off"
-          />
-
-          <button
-            type="submit"
-            className="w-full bg-blue-600 text-white py-3 rounded-md font-semibold hover:bg-blue-700 transition"
-            disabled={status === "sending"}
-          >
-            {status === "sending" ? "Sending..." : "Send Message"}
-          </button>
-
-          {statusMessage && (
-            <p
-              className={`text-center text-sm ${
-                status === "success" ? "text-green-600" : "text-red-600"
-              }`}
-            >
-              {statusMessage}
-            </p>
-          )}
-        </form>
-      </div>
-    </section>
-  );
+    return NextResponse.json(
+      { error: "Failed to process request." },
+      { status: 500 }
+    );
+  }
 }
