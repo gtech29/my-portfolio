@@ -100,7 +100,7 @@ export default function Contact() {
             name="website" 
             value={formData.website}
             onChange={handleChange}
-            className="block border border-red-500 text-red-500 px-4 py-2 mb-4"
+            className="hidden"
             autoComplete="off"
           />
 
