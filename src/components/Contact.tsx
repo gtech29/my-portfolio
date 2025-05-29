@@ -4,7 +4,7 @@ import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { db } from "@/lib/firebase";
 
 // In-memory rate limit map: IP => timestamp
-const RATE_LIMIT = new Map<string, number>();
+// const RATE_LIMIT = new Map<string, number>();
 
 // Helper to add timeout to async operations
 function withTimeout<T>(promise: Promise<T>, ms: number): Promise<T> {
@@ -17,22 +17,22 @@ function withTimeout<T>(promise: Promise<T>, ms: number): Promise<T> {
 }
 
 export async function POST(request: Request) {
-  const ip =
-    request.headers.get("x-forwarded-for") ||
-    request.headers.get("cf-connecting-ip") ||
-    "unknown";
-  const now = Date.now();
-  const lastRequest = RATE_LIMIT.get(ip);
+  // const ip =
+  //   request.headers.get("x-forwarded-for") ||
+  //   request.headers.get("cf-connecting-ip") ||
+  //   "unknown";
+  // const now = Date.now();
+  // const lastRequest = RATE_LIMIT.get(ip);
 
-  // Rate limit: 1 request per 60s
-  if (lastRequest && now - lastRequest < 60_000) {
-    return NextResponse.json(
-      { error: "Too many requests. Please try again later." },
-      { status: 429 }
-    );
-  }
+  
+  // if (lastRequest && now - lastRequest < 60_000) {
+  //   return NextResponse.json(
+  //     { error: "Too many requests. Please try again later." },
+  //     { status: 429 }
+  //   );
+  // }
 
-  RATE_LIMIT.set(ip, now);
+  // RATE_LIMIT.set(ip, now);
 
   try {
     const { name, email, message, website } = await request.json();
