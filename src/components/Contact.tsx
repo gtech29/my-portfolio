@@ -97,10 +97,10 @@ export default function Contact() {
           />
           <input
             type="text"
-            name="website" // name it something bots might fill
+            name="website" 
             value={formData.website}
             onChange={handleChange}
-            className="hidden"
+            className="block border border-red-500 text-red-500 px-4 py-2 mb-4"
             autoComplete="off"
           />
 
