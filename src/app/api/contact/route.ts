@@ -4,26 +4,26 @@ import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { db } from "@/lib/firebase";
 
 // In-memory rate limit map: IP => timestamp
-const RATE_LIMIT = new Map<string, number>();
-const RATE_LIMIT_WINDOW = 60_000; // 60 seconds
+// const RATE_LIMIT = new Map<string, number>();
+// const RATE_LIMIT_WINDOW = 60_000; // 60 seconds
 
 export async function POST(request: Request) {
-  const ip =
-    request.headers.get("x-forwarded-for") ||
-    request.headers.get("cf-connecting-ip") ||
-    "unknown";
+  // const ip =
+  //   request.headers.get("x-forwarded-for") ||
+  //   request.headers.get("cf-connecting-ip") ||
+  //   "unknown";
 
-  const now = Date.now();
-  const lastRequest = RATE_LIMIT.get(ip);
+  // const now = Date.now();
+  // const lastRequest = RATE_LIMIT.get(ip);
 
-  if (lastRequest && now - lastRequest < RATE_LIMIT_WINDOW) {
-    return NextResponse.json(
-      { error: "Too many requests. Please try again later." },
-      { status: 429 }
-    );
-  }
+  // if (lastRequest && now - lastRequest < RATE_LIMIT_WINDOW) {
+  //   return NextResponse.json(
+  //     { error: "Too many requests. Please try again later." },
+  //     { status: 429 }
+  //   );
+  // }
 
-  RATE_LIMIT.set(ip, now);
+  // RATE_LIMIT.set(ip, now);
 
   try {
     const body = await request.json();
