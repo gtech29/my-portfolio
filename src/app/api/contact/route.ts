@@ -20,7 +20,7 @@ export async function POST(request: Request) {
   RATE_LIMIT.set(ip, now);
 
   try {
-    const { name, email, message, website, recaptchaToken } = await request.json();
+    const { name, email, message, website } = await request.json();
   
     if (website && website.trim() !== "") {
       console.warn("Honeypot triggered by suspicious submission:", { ip, website });
