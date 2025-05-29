@@ -1,0 +1,16 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // ✅ Allow unauthenticated writes ONLY to the "contacts" collection
+    match /contacts/{docId} {
+      allow write: if true;     // allow POSTs to your API route
+      allow read: if false;     // no one can read from this
+    }
+
+    // ❌ Deny everything else
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
