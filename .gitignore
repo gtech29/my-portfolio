@@ -28,8 +28,8 @@ Thumbs.db
 
 # Environment variables (DO NOT COMMIT THESE)
 .env
-.env.*  # includes .env.local, .env.development, etc.
-
+.env.* 
+.env.local
 # Log files
 logs
 *.log
