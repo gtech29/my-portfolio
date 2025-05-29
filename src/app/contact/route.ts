@@ -18,10 +18,13 @@ export async function POST(request: Request) {
 
   try {
     const { name, email, message, website } = await request.json();
-    //  Honeypot check — real users won’t fill this field
     if (website && website.trim() !== "") {
       console.warn("Honeypot triggered by suspicious submission:", { ip, website });
-      return NextResponse.json({ error: "Bot detected." }, { status: 400 });
+      return NextResponse.json(
+        { success: true, message: "Message received." },
+        { status: 200 }
+      );
+      // return NextResponse.json({ error: "Bot detected." }, { status: 400 });
     }
 
 
