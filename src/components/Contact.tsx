@@ -1,19 +1,19 @@
 "use client";
 import ReCAPTCHA from "react-google-recaptcha";
-
-
 import { useState } from "react";
 
 export default function Contact() {
   const [recaptchaToken, setRecaptchaToken] = useState("");
-
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
-    website: "", // hidden honeypot field for bots
+    website: "", // honeypot
   });
-  const [status, setStatus] = useState("");
+  const [status, setStatus] = useState<
+    "idle" | "sending" | "success" | "error"
+  >("idle");
+  const [statusMessage, setStatusMessage] = useState("");
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -23,7 +23,8 @@ export default function Contact() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setStatus("Sending...");
+    setStatus("sending");
+    setStatusMessage("");
 
     try {
       const res = await fetch("/api/contact", {
@@ -34,13 +35,17 @@ export default function Contact() {
 
       const data = await res.json();
       if (res.ok) {
-        setStatus("Message sent!");
+        setStatus("success");
+        setStatusMessage("Message sent!");
         setFormData({ name: "", email: "", message: "", website: "" });
+        setRecaptchaToken("");
       } else {
-        setStatus(data.error || "Something went wrong.");
+        setStatus("error");
+        setStatusMessage(data.error || "Something went wrong.");
       }
     } catch {
-      setStatus("Failed to send. Try again.");
+      setStatus("error");
+      setStatusMessage("Failed to send. Try again.");
     }
   };
 
@@ -60,7 +65,7 @@ export default function Contact() {
 
         <form
           onSubmit={handleSubmit}
-          className="bg-slate-50  rounded-xl shadow-sm p-6 space-y-5 border border-slate-200 "
+          className="bg-slate-50 rounded-xl shadow-sm p-6 space-y-5 border border-slate-200"
         >
           <input
             type="text"
@@ -69,7 +74,7 @@ export default function Contact() {
             onChange={handleChange}
             placeholder="Your Name"
             required
-            className="w-full px-4 py-3 rounded-md bg-white  text-slate-800  border-slate-200  placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-4 py-3 rounded-md bg-white text-slate-800 border-slate-200 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
 
           <input
@@ -79,7 +84,7 @@ export default function Contact() {
             onChange={handleChange}
             placeholder="Your Email"
             required
-            className="w-full px-4 py-3 rounded-md bg-white  text-slate-800  border-slate-200  placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-4 py-3 rounded-md bg-white text-slate-800 border-slate-200 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
 
           <textarea
@@ -89,15 +94,17 @@ export default function Contact() {
             placeholder="Your Message"
             required
             rows={5}
-            className="w-full px-4 py-3 rounded-md bg-white  text-slate-800  border-slate-200  placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-4 py-3 rounded-md bg-white text-slate-800 border-slate-200 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
+
           <ReCAPTCHA
             sitekey="6LdyuU4rAAAAALn_RLtNUfKYKf3rfBsBraKppwUG"
             onChange={(token) => setRecaptchaToken(token || "")}
           />
+
           <input
             type="text"
-            name="website" 
+            name="website"
             value={formData.website}
             onChange={handleChange}
             className="hidden"
@@ -107,12 +114,19 @@ export default function Contact() {
           <button
             type="submit"
             className="w-full bg-blue-600 text-white py-3 rounded-md font-semibold hover:bg-blue-700 transition"
+            disabled={status === "sending"}
           >
-            Send Message
+            {status === "sending" ? "Sending..." : "Send Message"}
           </button>
 
-          {status && (
-            <p className="text-center text-sm text-gray-600">{status}</p>
+          {statusMessage && (
+            <p
+              className={`text-center text-sm ${
+                status === "success" ? "text-green-600" : "text-red-600"
+              }`}
+            >
+              {statusMessage}
+            </p>
           )}
         </form>
       </div>
