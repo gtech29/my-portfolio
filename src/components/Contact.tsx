@@ -11,6 +11,7 @@ export default function Contact() {
     name: "",
     email: "",
     message: "",
+    website: "", // hidden honeypot field for bots
   });
   const [status, setStatus] = useState("");
 
@@ -34,7 +35,7 @@ export default function Contact() {
       const data = await res.json();
       if (res.ok) {
         setStatus("Message sent!");
-        setFormData({ name: "", email: "", message: "" });
+        setFormData({ name: "", email: "", message: "", website: "" });
       } else {
         setStatus(data.error || "Something went wrong.");
       }
@@ -93,6 +94,14 @@ export default function Contact() {
           <ReCAPTCHA
             sitekey="6LdyuU4rAAAAALn_RLtNUfKYKf3rfBsBraKppwUG"
             onChange={(token) => setRecaptchaToken(token || "")}
+          />
+          <input
+            type="text"
+            name="website" // name it something bots might fill
+            value={formData.website}
+            onChange={handleChange}
+            className="hidden"
+            autoComplete="off"
           />
 
           <button

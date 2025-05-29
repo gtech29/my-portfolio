@@ -17,7 +17,13 @@ export async function POST(request: Request) {
   RATE_LIMIT.set(ip, now);
 
   try {
-    const { name, email, message } = await request.json();
+const { name, email, message, website } = await request.json();
+//  Honeypot check — real users won’t fill this field
+if (website && website.trim() !== "") {
+  console.warn("Honeypot triggered by suspicious submission:", { ip, website });
+  return NextResponse.json({ error: "Bot detected." }, { status: 400 });
+}
+
 
     //  Input presence check
     if (!name || !email || !message) {
