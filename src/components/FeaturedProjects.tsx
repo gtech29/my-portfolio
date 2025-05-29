@@ -9,25 +9,11 @@ const projects = [
     tags: ["Docker", "Kubernetes", "SSH", "DevSecOps", "Linux/Ubuntu", "CI/CD"],
   },
   {
-    title: "Stelesthetics",
-    description:
-      "Designed and launched a fully responsive Webflow website that highlights skincare services, streamlines booking, and improved client appointments by 15% through enhanced UX and navigation.",
-    image: "/img/stelesthetics.jpg",
-    tags: ["Webflow", "Google Analytics", "Responsive Design"],
-  },
-  {
     title: "ACM @ CSUN",
     description:
       "Built and maintained the ACM CSUN chapter website using Bootstrap, HTML, CSS, and JavaScript, boosting engagement by 15% through design improvements, regular updates, and analytics-driven decisions.",
     image: "/img/acm.png",
     tags: ["Bootstrap", "HTML", "CSS", "JavaScript", "Web Development"],
-  },
-  {
-    title: "LifeAid App",
-    description:
-      "Advised an app founder on technology strategy, attended Google events to stay ahead of trends, and helped improve functionality and analytics through hands-on consulting.",
-    image: "/img/lifeaid.jpeg",
-    tags: ["App Consulting", "Tech Strategy", "Analytics", "User Engagement"],
   },
 ];
 

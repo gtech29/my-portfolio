@@ -1,8 +1,12 @@
 "use client";
+import ReCAPTCHA from "react-google-recaptcha";
+
 
 import { useState } from "react";
 
 export default function Contact() {
+  const [recaptchaToken, setRecaptchaToken] = useState("");
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -24,7 +28,7 @@ export default function Contact() {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({ ...formData, recaptchaToken }),
       });
 
       const data = await res.json();
@@ -86,6 +90,10 @@ export default function Contact() {
             rows={5}
             className="w-full px-4 py-3 rounded-md bg-white  text-slate-800  border-slate-200  placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
+          <ReCAPTCHA
+            sitekey="6LdyuU4rAAAAALn_RLtNUfKYKf3rfBsBraKppwUG"
+            onChange={(token) => setRecaptchaToken(token || "")}
+          />
 
           <button
             type="submit"
@@ -95,9 +103,7 @@ export default function Contact() {
           </button>
 
           {status && (
-            <p className="text-center text-sm text-gray-600">
-              {status}
-            </p>
+            <p className="text-center text-sm text-gray-600">{status}</p>
           )}
         </form>
       </div>
