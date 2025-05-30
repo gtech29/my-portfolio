@@ -1,36 +1,39 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio Site
+
+This is my personal portfolio, built with [React](https://react.dev/), [Next.js](https://nextjs.org/), and deployed on [Vercel](https://vercel.com/). It highlights the projects I’ve worked on, the technologies I use, and the skills I’m continuing to build.
+
+I created this site to stay active with modern web technologies, explore AI integration, and apply DevSecOps workflows in real-world scenarios. It's a space that evolves alongside my learning and professional growth.
+
+---
 
 ## Getting Started
 
-First, run the development server:
+To run the project locally:
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+* **Framework** : Next.js (App Router)
+* **Hosting** : Vercel
+* **Styling** : Tailwind CSS
+* **Security** : Google reCAPTCHA, Firebase (for contact form)
+* **Backend** : Firebase Firestore (Admin SDK via API Routes)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+* `app/` – Pages and routing
+* `components/` – Reusable UI components
+* `lib/` – Firebase config and utility functions
+* `public/` – Static assets (images, icons)
+* `app/api/contact/` – API route for handling form submissions securely
+* 
 
-## Learn More
+## Deployment
 
-To learn more about Next.js, take a look at the following resources:
+The site is automatically deployed via Vercel on push to the `main` branch. Environment variables like Firebase credentials are managed through Vercel's dashboard.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Contact
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+You can reach out to me through the contact form on the site. The form is protected by reCAPTCHA and securely writes to Firebase.
