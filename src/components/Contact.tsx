@@ -10,6 +10,11 @@ export default function Contact() {
     message: "",
     website: "", // honeypot field for bots
   });
+  const [errors, setErrors] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
   const [status, setStatus] = useState("");
 
   const handleChange = (
@@ -18,8 +23,48 @@ export default function Contact() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  const validateForm = () => {
+    const newErrors = { name: "", email: "", message: "" };
+    let isValid = true;
+
+    if (!formData.name.trim()) {
+      newErrors.name = "Name is required.";
+      isValid = false;
+    } else if (/[^a-zA-Z\s'-]/.test(formData.name)) {
+      newErrors.name = "Name contains invalid characters.";
+      isValid = false;
+    }
+
+    if (!formData.email.trim()) {
+      newErrors.email = "Email is required.";
+      isValid = false;
+    } else if (formData.email.includes("%")) {
+      newErrors.email = "Email cannot contain special characters like %.";
+      isValid = false;
+    } else if (
+      !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(formData.email)
+    ) {
+      newErrors.email = "Invalid email format.";
+      isValid = false;
+    }
+
+    if (!formData.message.trim()) {
+      newErrors.message = "Message cannot be empty.";
+      isValid = false;
+    }
+
+    setErrors(newErrors);
+    return isValid;
+  };
+  
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (!validateForm()) {
+      return;
+    }
+
     setStatus("Sending...");
 
     try {
@@ -33,6 +78,7 @@ export default function Contact() {
       if (res.ok) {
         setStatus("Message sent!");
         setFormData({ name: "", email: "", message: "", website: "" });
+        setErrors({ name: "", email: "", message: "" });
       } else {
         setStatus(data.error || "Something went wrong.");
       }
@@ -51,8 +97,8 @@ export default function Contact() {
           Contact Me
         </h2>
         <p className="text-lg md:text-xl text-center text-black/80 max-w-2xl mx-auto mb-10">
-          Feel free to reach out if you&#39;re interested in working together, have
-          a question, or just want to say hi.
+          Feel free to reach out if you&#39;re interested in working together,
+          have a question, or just want to say hi.
         </p>
 
         <form
@@ -68,6 +114,7 @@ export default function Contact() {
             required
             className="w-full px-4 py-3 rounded-md bg-white text-slate-800 border-slate-200 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
+          {errors.name && <p className="text-red-500 text-sm">{errors.name}</p>}
 
           <input
             type="email"
@@ -78,6 +125,9 @@ export default function Contact() {
             required
             className="w-full px-4 py-3 rounded-md bg-white text-slate-800 border-slate-200 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
+          {errors.email && (
+            <p className="text-red-500 text-sm">{errors.email}</p>
+          )}
 
           <textarea
             name="message"
@@ -88,6 +138,9 @@ export default function Contact() {
             rows={5}
             className="w-full px-4 py-3 rounded-md bg-white text-slate-800 border-slate-200 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
+          {errors.message && (
+            <p className="text-red-500 text-sm">{errors.message}</p>
+          )}
 
           <ReCAPTCHA
             sitekey="6LdyuU4rAAAAALn_RLtNUfKYKf3rfBsBraKppwUG"
