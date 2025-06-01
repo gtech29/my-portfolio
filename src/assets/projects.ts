@@ -28,7 +28,7 @@ const projects: ProjectCardProps[] = [
     image: "/img/acm.png",
     tags: ["Bootstrap", "HTML", "CSS", "JavaScript", "Web Development"],
     showPlaceholder: false,
-    link: "https://csunacm.org/", // Update to real link if needed
+    link: "https://csunacm.org/", 
   },
   {
     title: "LifeAid App",
