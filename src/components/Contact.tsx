@@ -8,7 +8,7 @@ export default function Contact() {
     name: "",
     email: "",
     message: "",
-    website: "", // honeypot field for bots
+    website: "", // honeypot field
   });
   const [errors, setErrors] = useState({
     name: "",
@@ -56,12 +56,19 @@ export default function Contact() {
     setErrors(newErrors);
     return isValid;
   };
-  
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!validateForm()) {
+    if (!validateForm()) return;
+
+    if (!recaptchaToken) {
+      setStatus("Please complete the CAPTCHA before submitting.");
+      return;
+    }
+
+    if (formData.website) {
+      setStatus("Spam detected.");
       return;
     }
 
@@ -75,15 +82,17 @@ export default function Contact() {
       });
 
       const data = await res.json();
+
       if (res.ok) {
         setStatus("Message sent!");
         setFormData({ name: "", email: "", message: "", website: "" });
         setErrors({ name: "", email: "", message: "" });
+        setRecaptchaToken("");
       } else {
-        setStatus(data.error || "Something went wrong.");
+        setStatus(data.error || "CAPTCHA failed. Please try again.");
       }
     } catch {
-      setStatus("Failed to send. Try again.");
+      setStatus("Failed to send. Try again later.");
     }
   };
 
@@ -97,8 +106,8 @@ export default function Contact() {
           Contact Me
         </h2>
         <p className="text-lg md:text-xl text-center text-black/80 max-w-2xl mx-auto mb-10">
-          Feel free to reach out if you&#39;re interested in working together,
-          have a question, or just want to say hi.
+          Feel free to reach out if you&#39;re interested in working together, have
+          a question, or just want to say hi.
         </p>
 
         <form
