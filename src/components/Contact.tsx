@@ -16,6 +16,7 @@ export default function Contact() {
     message: "",
   });
   const [status, setStatus] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -60,6 +61,8 @@ export default function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
+    setStatus("");
+
     if (!validateForm()) return;
 
     if (!recaptchaToken) {
@@ -72,6 +75,7 @@ export default function Contact() {
       return;
     }
 
+    setIsSubmitting(true);
     setStatus("Sending...");
 
     try {
@@ -92,7 +96,9 @@ export default function Contact() {
         setStatus(data.error || "CAPTCHA failed. Please try again.");
       }
     } catch {
-      setStatus("Failed to send. Try again later.");
+      setStatus("Something went wrong. Try again later.");
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -106,8 +112,8 @@ export default function Contact() {
           Contact Me
         </h2>
         <p className="text-lg md:text-xl text-center text-black/80 max-w-2xl mx-auto mb-10">
-          Feel free to reach out if you&#39;re interested in working together, have
-          a question, or just want to say hi.
+          Feel free to reach out if you&#39;re interested in working together,
+          have a question, or just want to say hi.
         </p>
 
         <form
@@ -167,9 +173,14 @@ export default function Contact() {
 
           <button
             type="submit"
-            className="w-full bg-blue-600 text-white py-3 rounded-md font-semibold hover:bg-blue-700 transition"
+            disabled={isSubmitting}
+            className={`w-full py-3 rounded-md font-semibold transition ${
+              isSubmitting
+                ? "bg-gray-400 cursor-not-allowed"
+                : "bg-blue-600 text-white hover:bg-blue-700"
+            }`}
           >
-            Send Message
+            {isSubmitting ? "Sending..." : "Send Message"}
           </button>
 
           {status && (
