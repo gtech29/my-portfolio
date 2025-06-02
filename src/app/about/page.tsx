@@ -52,7 +52,7 @@ export default function AboutPage() {
             Juan Rodriguez
           </h1>
           <p className="text-lg text-gray-700 leading-relaxed text-center md:text-left">
-            I&#39;m a Research & Development Engineer focused on building
+            I&#39;m a Software Engineer focused on building
             secure, scalable systems across AI/ML, and DevSecOps domains. I
             enjoy blending practical engineering with forward-thinking design.
           </p>

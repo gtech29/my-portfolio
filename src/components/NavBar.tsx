@@ -34,7 +34,7 @@ export default function NavBar() {
         <div className="absolute left-1/2 transform -translate-x-1/2 text-center">
           <h1 className="text-xl font-bold text-gray-900 ">Juan Rodriguez</h1>
           <p className="text-sm text-gray-500 -mt-1 ">
-            Research & Development Engineer
+            Software Engineer
           </p>
         </div>
 
