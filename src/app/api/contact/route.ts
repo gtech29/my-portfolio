@@ -11,7 +11,7 @@ export async function POST(request: Request) {
     // Honeypot field for bots
     if (website?.trim()) {
       console.warn("Bot detected via honeypot");
-      return NextResponse.json({ message: "Bot submission ignored." }, { status: 200 });
+      return NextResponse.json({ message: "Bot submission ignored." }, { status: 403 });
     }
 
     // Validate required inputs
