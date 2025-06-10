@@ -18,12 +18,14 @@ export default function Home() {
         {/*  */}
         <div className="max-w-3xl text-center bg-white/40 backdrop-blur-md border border-white/30 rounded-xl p-8 shadow-lg">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-black mb-2">
-            Helping teams build secure, scalable systems that make sense.
+            Helping teams build secure, scalable, and reliable systems.
           </h1>
           <p className="text-lg md:text-xl text-center text-black/80 max-w-2xl mx-auto mb-10">
-            I work with secure automation, real-time integration, and applied AI
-            to build systems that are practical and maintainable.
+            I specialize in secure automation, real-time data integration, and
+            applied AI to deliver practical, maintainable solutions that support
+            modern DevOps and cloud-native workflows.
           </p>
+
           {/* <div className="flex justify-center gap-4">
             <button className="bg-blue-500 text-white px-5 py-2 rounded-md font-semibold hover:bg-blue-600 transition">
               Build for me

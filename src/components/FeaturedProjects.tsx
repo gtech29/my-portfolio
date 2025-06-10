@@ -4,14 +4,14 @@ const projects = [
   {
     title: "NAVFAC Digital Twin",
     description:
-      "Developed containerized control system apps, configured networks for advanced automation setups, and simulated system behavior using Python to support accurate testing and deployment.",
+      "Developed containerized control system applications, set up network configurations for automation, and used Python to simulate real world behavior for reliable testing and deployment.",
     image: "/img/navfac.jpg",
     tags: ["Docker", "Kubernetes", "SSH", "DevSecOps", "Linux/Ubuntu", "CI/CD"],
   },
   {
     title: "ACM @ CSUN",
     description:
-      "Built and maintained the ACM CSUN chapter website using Bootstrap, HTML, CSS, and JavaScript, boosting engagement by 15% through design improvements, regular updates, and analytics-driven decisions.",
+      "Built and maintained the ACM CSUN chapter website using Bootstrap, HTML, CSS, and JavaScript. Improved engagement by 15 percent through design updates, regular maintenance, and decisions guided by analytics.",
     image: "/img/acm.png",
     tags: ["Bootstrap", "HTML", "CSS", "JavaScript", "Web Development"],
   },
@@ -24,14 +24,14 @@ export const FeaturedProjects = () => {
       id="projects"
       className="min-h-screen flex flex-col items-center justify-center py-20 bg-gradient-to-b from-white to-slate-100"
     >
-      <div className="max-w-4xl mx-auto text-center ">
+      <div className="max-w-4xl mx-auto text-center">
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-black mb-2">
           Featured Projects
         </h2>
-        <p className="text-lg md:text-xl text-center text-black/80 max-w-2xl mx-auto mb-10">
-          Here are some of the projects I&#39;ve had the opportunity to work on,
-          each one reflecting a different aspect of my experience in design,
-          development, and problem solving across real world applications.
+        <p className="text-lg md:text-xl text-center text-black/80 mb-10">
+          These projects reflect my experience in system design, software
+          development, and automation through real world challenges in DevOps,
+          security, and AI.
         </p>
       </div>
 
