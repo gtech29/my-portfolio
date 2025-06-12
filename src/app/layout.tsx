@@ -16,6 +16,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Juan Rodriguez | Portfolio",
   description: "Secure, scalable, and pragmatic full-stack engineering.",
+  icons: {
+    icon: "/favicon.ico", 
+  },
 };
 
 export default function RootLayout({
