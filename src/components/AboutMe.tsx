@@ -5,14 +5,14 @@ import { motion } from "framer-motion";
 export default function AboutPage() {
   const timeline = [
     {
-      title: "AI Operations & Infrastructure Intern @ NAVFAC EXWC",
+      title: "AI DevOps Intern @ NAVFAC EXWC",
       description:
         "Developed containerized applications using Docker and Kubernetes to support mission-critical testing environments. Simulated control system operations in Python and configured secure network setups for reliable deployment.",
       current: true,
       tools: ["Docker", "Kubernetes", "Python", "CI/CD", "SSH"],
     },
     {
-      title: "Front-End Web Developer @ CSUN ACM Chapter",
+      title: "Front-End Developer @ CSUN ACM Chapter",
       description:
         "Designed and maintained the ACM CSUN website using Bootstrap, HTML/CSS, and JavaScript. Improved site engagement by 15% through regular updates, analytics integration, and responsive UX enhancements.",
       tools: ["Bootstrap", "HTML", "CSS", "JavaScript", "Git"],
@@ -24,7 +24,7 @@ export default function AboutPage() {
       tools: ["SQL", "Agile"],
     },
     {
-      title: "Freelance Front-End Developer @ Stelesthetics",
+      title: "Front-End Developer @ Stelesthetics",
       description:
         "Built a responsive Webflow site for a skincare business. Enhanced booking flow and service visibility, leading to a 15% increase in appointments through UX improvements and clear service presentation.",
       tools: ["Webflow", "Google Analytics", "UX/UI", "Responsive Design"],
