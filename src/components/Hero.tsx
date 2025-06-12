@@ -32,7 +32,7 @@ export default function Hero() {
             and <span className="font-semibold">applied AI</span> to deliver
             practical, maintainable solutions.
             <br className="hidden md:block" />
-            My focus is on supporting modern DevOps and cloud-native workflows
+             My focus is on supporting modern DevOps and cloud-native workflows
             through clear, scalable systems.
           </p>
 
