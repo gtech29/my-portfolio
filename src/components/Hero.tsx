@@ -1,41 +1,61 @@
+"use client";
 
+import Image from "next/image";
+import Link from "next/link";
 
-export default function Home() {
+export default function Hero() {
   return (
-    <>
-      {/* Hero Section */}
-      <section
-        className=" relative min-h-screen w-full flex items-center justify-center bg-cover bg-center bg-no-repeat px-4 "
-        style={{
-          backgroundImage: "url('/img/hero.png')",
-          backgroundSize: "cover", // Ensures the image scales to cover the area
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-        }}
-      >
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-black/20 z-0 min-h-screen" />
-        {/*  */}
-        <div className="max-w-3xl text-center bg-white/40 backdrop-blur-md border border-white/30 rounded-xl p-8 shadow-lg">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-black mb-2">
-            Helping teams build secure, scalable, and reliable systems.
+    <section
+      className="relative w-full min-h-[70vh] md:min-h-[60vh] bg-cover bg-center bg-no-repeat"
+      style={{ backgroundImage: "url('/img/hero3.jpg')" }}
+    >
+      {/* Dark Overlay */}
+      <div className="absolute inset-0 bg-black/40 z-0" />
+
+      {/* Gradient Bottom */}
+      <div className="absolute bottom-0 left-0 w-full h-96 z-10 bg-gradient-to-t from-[#f6f8fb] to-transparent" />
+
+      {/* Hero Content */}
+      <div className="relative z-20 h-full max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-center gap-8">
+        {/* Text Section */}
+        <div className="text-center md:text-left max-w-2xl mt-20">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white drop-shadow-lg">
+            Juan Rodriguez
           </h1>
-          <p className="text-lg md:text-xl text-center text-black/80 max-w-2xl mx-auto mb-10">
-            I specialize in secure automation, real-time data integration, and
-            applied AI to deliver practical, maintainable solutions that support
-            modern DevOps and cloud-native workflows.
+          <p className="mt-2 text-white text-sm sm:text-base tracking-wide uppercase">
+            Helping teams build secure, scalable, and reliable systems.
+          </p>
+          <p className="mt-4 text-white text-sm sm:text-base md:text-lg leading-relaxed">
+            I specialize in{" "}
+            <span className="font-semibold">secure automation</span>,{" "}
+            <span className="font-semibold">real-time data integration</span>,
+            and <span className="font-semibold">applied AI</span> to deliver
+            practical, maintainable solutions.
+            <br className="hidden md:block" />
+            My focus is on supporting modern DevOps and cloud-native workflows
+            through clear, scalable systems.
           </p>
 
-          {/* <div className="flex justify-center gap-4">
-            <button className="bg-blue-500 text-white px-5 py-2 rounded-md font-semibold hover:bg-blue-600 transition">
-              Build for me
-            </button>
-            <button className="bg-gray-100 text-black px-5 py-2 rounded-md font-semibold hover:bg-gray-200 transition">
-              Start building
-            </button>
-          </div> */}
+          {/* CTA */}
+          <Link
+            href="/projects"
+            className="inline-block mt-6 py-2 px-5 bg-white text-black font-semibold rounded shadow hover:bg-gray-100 transition"
+          >
+            View My Projects
+          </Link>
         </div>
-      </section>
-    </>
+
+        {/* Profile Image */}
+        <div className="w-28 h-28 sm:w-32 sm:h-32 md:w-40 md:h-40 relative rounded-full overflow-hidden shadow-lg ring-2 ring-white">
+          <Image
+            src="/img/profile.jpg"
+            alt="Juan Rodriguez"
+            fill
+            className="object-cover"
+            priority
+          />
+        </div>
+      </div>
+    </section>
   );
 }

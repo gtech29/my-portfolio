@@ -24,7 +24,7 @@ const projects: ProjectCardProps[] = [
     title: "ACM @ CSUN",
     date: "Deployed June 2024 \u2013  Under Active Maintenance",
     description:
-      "Developed and maintained the official website for CSUN’s ACM chapter to support events, outreach, and student engagement. Built a responsive, mobile-first layout using Bootstrap, HTML/CSS, and JavaScript. Automated content updates and integrated analytics tools to track site traffic, contributing to a 15 percent increase in user interaction. Published announcements, resources, and event details to keep the student community informed and active.",
+      "Developed and maintained the official website for CSUN\u2019s ACM chapter to support events, outreach, and student engagement. Built a responsive, mobile-first layout using Bootstrap, HTML/CSS, and JavaScript. Automated content updates and integrated analytics tools to track site traffic, contributing to a 15 percent increase in user interaction. Published announcements, resources, and event details to keep the student community informed and active.",
     image: "/img/acm.png",
     tags: ["Bootstrap", "HTML", "CSS", "JavaScript", "Web Development"],
     showPlaceholder: false,
