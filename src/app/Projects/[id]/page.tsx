@@ -21,11 +21,11 @@ export default async function ProjectPage({
     notFound();
   }
 
-  // Need to fix header alignment
+ 
   return (
     <main className="min-h-screen bg-white pt-32 pb-40 dark:bg-[#050505] transition-colors duration-300">
       <div className="mx-auto max-w-3xl px-6 lg:px-8">
-        {/* Back Navigation */}
+        {/* Back Navigation -> Need to fix Alignment */}
         <div className="mb-24">
           <Link
             href="/#projects"
@@ -36,8 +36,8 @@ export default async function ProjectPage({
           </Link>
         </div>
 
-        {/* Project Header */}
-        {/* <header className="mb-20">
+        {/* Project Header --> Finish cleaning this section */}
+        <header className="mb-20">
           <div className="flex items-center justify-between mb-4">
             <span className="text-sm font-bold uppercase tracking-widest text-indigo-600 dark:text-indigo-400">
               {project.organization}
@@ -75,7 +75,7 @@ export default async function ProjectPage({
               </span>
             ))}
           </div>
-        </header> */}
+        </header>
 
         {/* Dynamic Content Grid - All blocks styled as premium cards */}
         <div className="flex flex-col gap-12">

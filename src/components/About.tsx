@@ -30,7 +30,7 @@ export default function About() {
               return (
                 <div
                   key={tech.name}
-                  className="group relative flex min-h-[160px] flex-col items-center justify-center overflow-hidden rounded-xl border border-slate-200 bg-white p-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md dark:border-slate-800 dark:bg-slate-900/50 dark:hover:border-indigo-500/50"
+                  className="group relative flex min-h-40 flex-col items-center justify-center overflow-hidden rounded-xl border border-slate-200 bg-white p-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md dark:border-slate-800 dark:bg-slate-900/50 dark:hover:border-indigo-500/50"
                 >
                   {/* Default State: Icon & Titles (Fades out on hover) */}
                   <div className="flex flex-col items-center justify-center transition-opacity duration-300 group-hover:opacity-0 group-hover:scale-95">
