@@ -1,0 +1,42 @@
+{
+  "title": "Bridging Software Engineering with Strategic Problem Solving",
+  "description": "I am a Computer Science student and Researcher with a unique background as a U.S. Navy Veteran and Business Analyst. My focus is on developing secure, reliable software systems that solve real-world problems. \n\nI combine technical expertise in full-stack development with the analytical mindset of a QA professional to ensure that every product I build is not only functional but resilient and user-centric.",
+  "techStack": [
+    {
+      "name": "Web Development",
+      "category": "User Experience",
+      "icon": "Layout",
+      "proficiency": "Building responsive, mobile-first interfaces and migrating legacy sites to modern full-stack architectures."
+    },
+    {
+      "name": "AI Engineering",
+      "category": "Intelligent Systems",
+      "icon": "Cpu",
+      "proficiency": "Integrating Python-based logic and fundamental programming concepts into automated workflows."
+    },
+    {
+      "name": "Cybersecurity",
+      "category": "Security Ops",
+      "icon": "ShieldCheck",
+      "proficiency": "Hands-on experience in logging, incident response, and anomaly detection using Splunk and Wireshark."
+    },
+    {
+      "name": "DevOps & Systems",
+      "category": "Reliability",
+      "icon": "Container",
+      "proficiency": "Ensuring reliable operation across environments using Docker and managing microservices integration testing."
+    },
+    {
+      "name": "Data Architecture",
+      "category": "Data Management",
+      "icon": "Database",
+      "proficiency": "Executing complex SQL queries and structuring MongoDB databases for seamless website deployments."
+    },
+    {
+      "name": "Quality Assurance",
+      "category": "Strategic QA",
+      "icon": "CheckCircle",
+      "proficiency": "Leading regression testing and analyzing metrics to optimize user engagement and system uptime."
+    }
+  ]
+}

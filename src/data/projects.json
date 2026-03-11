@@ -1,0 +1,52 @@
+{
+  "projects": [
+    {
+      "id": "navfac",
+      "title": "Microservices Integration & Reliability",
+      "organization": "Naval Facilities Engineering Center",
+      "role": "CS Research Assistant",
+      "summary": "Engineered containerized software systems to ensure reliable operation across multiple environments.",
+      "techStack": ["Docker", "Microservices", "Security Integration", "Ubuntu"],
+      "challenge": "The organization required software systems to run reliably across diverse and isolated environments, including both field and offline settings.",
+      "architecture": "Implemented Docker containerization to standardize deployment environments. I collaborated closely with cybersecurity, network, and application teams to conduct rigorous microservices integration testing, ensuring all services functioned securely and as intended.",
+      "outcome": "Achieved consistent operation in field settings. I also guided a 10-member team through a technical presentation and created comprehensive documentation to support future system updates, ongoing maintenance, and issue resolution.",
+      "link": "#"
+    },
+    {
+      "id": "accenture",
+      "title": "Enterprise QA & Database Management",
+      "organization": "Accenture, LLC",
+      "role": "Business Analyst Intern",
+      "summary": "Executed complex SQL queries and comprehensive regression testing to ensure seamless website deployments.",
+      "techStack": ["SQL", "Regression Testing", "Agile/Scrum", "Quality Assurance"],
+      "challenge": "A major platform serving 10,000+ monthly users needed rigorous quality assurance to ensure seamless deployments and maintain database integrity across testing milestones.",
+      "architecture": "Partnered with cross-functional teams to execute complex SQL queries and conduct comprehensive regression testing. I coordinated reporting schedules and milestones directly with Cisco and Accenture stakeholders.",
+      "outcome": "Ensured timely project delivery without critical post-launch defects. Additionally, I proposed an innovative VR-based educational tool during a sustainability capstone project.",
+      "link": "#"
+    },
+    {
+      "id": "stelesthetics",
+      "title": "Full-Stack Migration & UX Optimization",
+      "organization": "StelEsthetics",
+      "role": "Front-End Web Developer",
+      "summary": "Led the architectural migration of a legacy Webflow site to a modern full-stack framework.",
+      "techStack": ["React", "Node.js", "Google Analytics", "UX/UI Design"],
+      "challenge": "The client needed to migrate from a limited Webflow site to a scalable full-stack architecture while simultaneously improving user conversion rates and traffic.",
+      "architecture": "Led the migration process, defining phases and deliverables for timely completion. I analyzed engagement metrics using Google Analytics to inform data-driven UX improvements.",
+      "outcome": "Successfully deployed the new architecture, resulting in a 15% increase in customer appointments and a 10% increase in overall site traffic.",
+      "link": "https://www.stelesthetics.net/"
+    },
+    {
+      "id": "codepath",
+      "title": "Threat Hunting & Anomaly Detection",
+      "organization": "CodePath",
+      "role": "Cybersecurity Analyst",
+      "summary": "Completed an immersive program focused on security operations, log analysis, and incident response.",
+      "techStack": ["Splunk", "Wireshark", "Incident Response", "Log Analysis"],
+      "challenge": "Developing a robust foundation in security operations, specifically focusing on identifying system anomalies and executing rapid incident response protocols.",
+      "architecture": "Utilized Splunk Catalyst and Wireshark to conduct deep log analysis, intrusion detection, and threat hunting within simulated, high-stakes environments.",
+      "outcome": "Built detailed case study reports identifying critical anomalies in system performance, significantly strengthening my investigative documentation and decision-making skills.",
+      "link": "#"
+    }
+  ]
+}

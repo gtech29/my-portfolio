@@ -1,12 +1,13 @@
 {
   "links": [
-    { "label": "About", "href": "/about" },
+    { "label": "About", "href": "/#about" },
     { 
       "label": "Projects", 
       "items": [
-        { "title": "Accessibility Application", "href": "/projects/accessibility" },
-        { "title": "Digital Twin Dashboard", "href": "/projects/digital-twin" },
-        { "title": "Stelesthetics", "href": "/projects/stelesthetics" }
+        { "title": "Microservices Integration (NAVFAC)", "href": "/Projects/navfac" },
+        { "title": "Enterprise QA (Accenture)", "href": "/Projects/accenture" },
+        { "title": "Full-Stack Migration (StelEsthetics)", "href": "/Projects/stelesthetics" },
+        { "title": "Threat Hunting (CodePath)", "href": "/Projects/codepath" }
       ]
     },
     { "label": "Contact", "href": "/contact" }
