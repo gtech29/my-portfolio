@@ -1,0 +1,14 @@
+{
+  "links": [
+    { "label": "About", "href": "/about" },
+    { 
+      "label": "Projects", 
+      "items": [
+        { "title": "Accessibility Application", "href": "/projects/accessibility" },
+        { "title": "Digital Twin Dashboard", "href": "/projects/digital-twin" },
+        { "title": "Stelesthetics", "href": "/projects/stelesthetics" }
+      ]
+    },
+    { "label": "Contact", "href": "/contact" }
+  ]
+}
